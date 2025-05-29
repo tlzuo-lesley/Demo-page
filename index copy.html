@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>DualDub: Video-to-Soundtrack Generation via Joint Speech and Background Audio Synthesis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="page-header">
+    <!-- Header content -->
+  </section>
+
+  <section class="main-content">
+    <h1 id="">
+      <center>DualDub: Video-to-Soundtrack Generation via Joint Speech and Background Audio Synthesis</center>
+    </h1>
+
+    <br><br>
+    <h2 id="abstract" style="text-align: center;">Abstract<a name="abstract"></a></h2>
+    <p style="text-align: justify;">
+      While recent video-to-audio (V2A) models can generate realistic background sounds from visual input, they largely overlook speech, an essential part of many video soundtracks. 
+      This paper proposes a new task, video-to-soundtrack (V2ST) generation, which aims to jointly generate both background audio and speech in a unified framework.
+      To tackle V2ST, we introduce DualDub, a unified framework built on a multimodal large language model, which integrates a multimodal alignment module, multimodal encoders, and dual decoding heads for simultaneous background audio and speech generation.
+      To handle data scarcity, we design a curriculum learning strategy that progressively builds the multi-modal capability. 
+      We also propose a cross-modal alignment module with causal and non-causal attention to improve synchronization and acoustic harmony. Finally, we introduce DualBench, the first benchmark for V2ST evaluation with a carefully curated test set and comprehensive metrics. 
+      Experiments show that DualDub achieves state-of-the-art performance in generating coherent and synchronized soundtracks that include both speech and environmental sound.
+    </p>
+    <table frame=void rules=none>
+      <tr>
+        <center><img src='raw/fig/SynthVC.png' alt="Model architecture diagram"></center>
+      </tr>
+    </table>
+    <br><br>
+
+    <h2 style="text-align: center;">Demo<a name="Comparison"></a></h2>
+    <p style="text-align: justify;">Here's a synthesized sample of our video-to-soundtrack generation.</p>
+
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <th style="text-align: center;">Source Video</th>
+          <th style="text-align: center;">Generated Soundtrack</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr>
+          <td style="text-align: center;">
+            <video style="width: 300px;" controls>
+              <source src="demo_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </td>
+          <td style="text-align: center;">
+            <audio controls>
+              <source src="demo_audio.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+      </tbody>
+    </table> 
+
+  </section>
+
+
+
+  <table border="1" style="width: 100%; text-align: center; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>text</th>
+        <th>reference speaker</th>
+        <th>video</th>
+        <th>MMAudio+speaker2dubber</th>
+        <th>Diffoly+style2dubber</th>
+        <th>DualDub</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 复制这一行5次作为示例 -->
+      <!-- 每一行的内容可以后续替换为不同样本 -->
+      <!-- 示例中用了相同路径的资源 -->
+      <!-- 替换 src 中的路径为实际路径 -->
+      <!-- 第一行 -->
+      <tr>
+        <td>Example text content</td>
+        <td><audio controls src="audio/reference.mp3"></audio></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+      </tr>
+  
+      <!-- 第二行 -->
+      <tr>
+        <td>Example text content</td>
+        <td><audio controls src="audio/reference.mp3"></audio></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+      </tr>
+  
+      <!-- 第三行 -->
+      <tr>
+        <td>Example text content</td>
+        <td><audio controls src="audio/reference.mp3"></audio></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+      </tr>
+  
+      <!-- 第四行 -->
+      <tr>
+        <td>Example text content</td>
+        <td><audio controls src="audio/reference.mp3"></audio></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+      </tr>
+  
+      <!-- 第五行 -->
+      <tr>
+        <td>Example text content</td>
+        <td><audio controls src="audio/reference.mp3"></audio></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+        <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>
+      </tr>
+    </tbody>
+  </table>
+
+<!--   
+<script type="text/javascript">
+  window.onload = function () {
+
+    
+    
+    let sample_data = `
+      <tr>
+        <td style="text-align: center">
+          <video style="width: 300px;" controls>
+            <source src="raw/samples/V2A/Bob-00-1059.mp4" type="video/mp4">
+          </video>
+        </td>
+        <td style="text-align: center">
+          <audio controls>
+            <source src="raw/samples/V2A/Bob-00-1059.wav" type="audio/wav">
+          </audio>
+        </td>
+      </tr>`;
+    
+    document.getElementById('tbody').innerHTML = sample_data;
+    
+  }
+</script>
+</body>
+</html> -->
