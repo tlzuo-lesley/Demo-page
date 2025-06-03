@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-  <title>DualDub: Video-to-Soundtrack Generation via Joint Speech and Background Audio Synthesis</title>
+  <title>XEmoRAG: Cross-Lingual Emotion Transfer with Controllable Intensity Using Retrieval-Augmented Generation</title>
   <meta name="generator" content="Jekyll v3.9.0">
   <meta property="og:title" content="TODO: title">
   <meta property="og:locale" content="en_US">
@@ -25,7 +25,7 @@
 
   <section class="main-content">
     <h1 id="">
-      <center>DualDub: Video-to-Soundtrack Generation via Joint Speech and Background Audio Synthesis</center>
+      <center>XEmoRAG: Cross-Lingual Emotion Transfer with Controllable Intensity Using Retrieval-Augmented Generation</center>
     </h1>
     <!-- <h1 style="text-align: center;">DualDub: Video-to-Soundtrack Generation via Joint Speech and Background Audio Synthesis<a name="Comparison"></a></h1> -->
 
@@ -33,49 +33,27 @@
     <h2 id="abstract" style="text-align: center;">Abstract<a name="abstract"></a></h2>
     <!-- <p style="text-align: justify;">DualDub: Video-to-Soundtrack Generation via Joint Speech and Background Audio Synthesis</p> -->
     <p style="text-align: justify;">
-      While recent video-to-audio (V2A) models can generate realistic background audio from visual input, they largely overlook speech, an essential part of many video soundtracks.
-      This paper proposes a new task, video-to-soundtrack (V2ST) generation, which aims to jointly produce synchronized background audio and speech within a unified framework.
-      To tackle V2ST, we introduce DualDub, a unified framework built on a multimodal language model that integrates a multimodal encoder, a cross-modal aligner, and dual decoding heads for simultaneous background audio and speech generation.
-      Specifically, our proposed cross-modal aligner employs causal and non-causal attention mechanisms to improve synchronization and acoustic harmony. Besides, to handle data scarcity, we design a curriculum learning strategy that progressively builds the multi-modal capability. 
-      Finally, we introduce DualBench, the first benchmark for V2ST evaluation with a carefully curated test set and comprehensive metrics.
-      Experimental results demonstrate that DualDub achieves state-of-the-art performance, generating high-quality and well-synchronized soundtracks with both speech and background audio.
+      Zero-shot emotion transfer in cross-lingual speech synthesis refers to generating speech in a target language, where the emotion is expressed based on reference speech from a different source language.However, this task remains challenging due to the scarcity of parallel multilingual emotional corpora, the presence of foreign accent artifacts, and the difficulty of separating emotion from language-specific prosodic features.In this work, we explore a practical yet underexplored scenario: transferring emotions from Chinese to Thai in a zero-shot setting without relying on parallel emotional data. 
+      We propose XEmoRAG, a novel framework for cross-lingual emotion transfer with controllable intensity, using retrieval-augmented generation to guide emotional expression.XEmoRAG extracts language-agnostic emotional embeddings from a Chinese reference using a pre-trained emotion encoder and retrieves emotionally matched Thai utterances from a curated emotional database.
+      These retrieved prompts guide generation through a retrieval-augmented generation (RAG) pipeline. Additionally, a flow-matching alignment module minimizes pitch and duration mismatches to ensure natural prosody and speaker timbre blending.Experimental results show that XEmoRAG synthesizes expressive and natural Thai speech using only Chinese reference audio, without requiring explicit emotion labels.These findings demonstrate the effectiveness of XEmoRAG in controllable and data-efficient cross-lingual emotion transfer, making it well-suited for multilingual movie dubbing, especially in low-resource scenarios.
     </p>
-    <!-- <table frame=void rules=none>
-      <tr>
-        <center><img src='raw/fig/overview.png'></center>
-      </tr>
-      <tr>
-        <center><img src='raw/fig/LM.png'></center>
-      </tr>
-    </table> -->
 
-    <table frame=void rules=none>
-      <tr>
-        <td style="text-align:center;">
-          <img src='raw/fig/overview.png' width="70%">
-          <p style="text-align: justify; margin: 5px 0;">
-            <em>Figure 1: Overview of the proposed DualDub. DualDub focuses on the video-to-soundtrack generation task with joint
-            speech and background audio synthesis.</em></p>
-        </td>
-      </tr>
-      <tr>
-        <td style="text-align:center;">
-          <img src='raw/fig/LM.png' width="70%">
-          <p style="text-align: justify; margin: 5px 0;">
-            <em>Figure 2: Architecture of the proposed DualDub and Contrastive Audio-Speech Pretraining (CASP). (a) illustrates the overall
-            architecture of DualDub. The gray-shaded area represents the multimodal encoder. The detailed structure of the multimodal
-            aligner is shown in (b). Specifically, the lines indicate which key-value embeddings are visible to the query. The outputs from
-            these four cross-attention modules are summed to generate the final fused representation. (c) depicts the overall architecture
-            of CASP that utilizes Mel-RoFormer to separate the mixed waveform into background audio and speech.</em></p>
-        </td>
-      </tr>
-    </table>
+    <div style="display: flex; justify-content: center; margin: 20px 0;">
+      <div style="max-width: 100%; text-align: center;">
+        <img src='raw/fig/overview.png' style="max-width: none; width: 80%; height: auto;">
+        <p style="text-align: center; font-style: italic;">
+          Figure 1: Cross-lingual emotional speech synthesis system based on retrieval-augmented generation and flow matching. The user input includes a Chinese emotional reference speech, target Thai text, and a specified emotion intensity level (strong, normal, or weak).
+        </p>
+      </div>
+    </div>
+
+
     <br><br>
 
 
-    <h2 style="text-align: center;">Demo<a name="Comparison"></a></h2>
-    <p style="text-align: justify;">Here's synthesized video-to-soundtrack samples of DualDub and Comparison models.</p>
-    <h2 style="text-align: center;">Video-to-Soundtrack<a name="Comparison"></a></h2>
+    <h2 style="text-align: center;">Cross-Lingual Emotion Comparison<a name="Comparison"></a></h2>
+    <p style="text-align: justify;">Compare emotional speech synthesis results between XEmoRAG and baseline models in Chinese-to-Thai transfer.</p>
+    <!-- <h2 style="text-align: center;">Comparison of Emotional behavior<a name="Comparison"></a></h2> -->
 
     <!-- <table style="display: flex; justify-content: center;"> -->
     <!-- <table style="width: 1200px; table-layout: fixed; border-collapse: collapse;" border="1"> -->
@@ -85,16 +63,16 @@
     </table> 
 
 
-    <h2 style="text-align: center;">Video-to-Audio<a name="Comparison"></a></h2>
-    <p style="text-align: justify;">Here's synthesized video-to-audio samples of DualDub and Comparison models.</p>
+    <h2 style="text-align: center;">Emotion Intensity Control<a name="Comparison"></a></h2>
+    <p style="text-align: justify;">Demonstrate XEmoRAG's ability to control emotion intensity at three levels: weak, normal, and strong.</p>
     <table style="display: flex; justify-content: center;">
       <tbody id="v2a-body">
       </tbody>
     </table> 
 
 
-    <h2 style="text-align: center;">Video-to-Speech<a name="Comparison"></a></h2>
-    <p style="text-align: justify;">Here's synthesized video-to-speech samples of DualDub and Comparison models.</p>
+    <h2 style="text-align: center;">Flow Matching for Natural Prosody and Timbre<a name="Comparison"></a></h2>
+    <p style="text-align: justify;">Compare Flow matching and original xCodec2 in Llasa on naturalness, expressiveness, and timbre blending.</p>
     <table style="display: flex; justify-content: center;">
       <tbody id="v2s-body">
       </tbody>
@@ -105,107 +83,146 @@
 
 <script type="" text/javascript>
   window.onload = function () {
-   
-    sample_data =`
-      <tr>
-        <th>Text</th>
-        <th>Reference Speaker</th>
-        <th>Ground Truth Video</th>
-        <th>MMAudio+Speaker2dubber</th>
-        <th>DualDub</th>
-      </tr>
+    sample_data=`
+           <div style="width: 100%; overflow-x: auto; margin: 20px 0;padding: 0;">
+        <table border="1" cellspacing="0" cellpadding="6" style="width: 100%; min-width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th>Chinese ref audio</th>
+            <th>Matched Thai audio</th>
+            <th>proposed</th>
+            <th>typhoon</th>
+            <th>delightfulTTS</th>
+          </tr>
+        </thead>
+        <tbody>
 
-     <tr>
-        <td>in the car right now on my way to the office to fax them to you</td>
-        <td><audio controls style="width: 200px;"  src="raw/samples/comparsion/groundtruth_speech/AIMcW-00-0583.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video/AIMcW-00-0583.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/mmaudio+s2d/AIMcW-00-0583.mp4"></video></td>
-        <!-- <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td> -->
-        <td><video controls width="200" src="raw/samples/V2S/AIMcW-00-0583-dualdub.mp4"></video></td>
-      </tr> 
+          <!-- Sample for 1.wav -->
+          <tr>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/VCF1_240111.wav"></audio></td>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/210016.wav"></audio></td>
+            <td colspan="3" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/VCF1_240111_210016_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_240111_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/210016_54.wav"></audio></td>
+          </tr>  
+          <tr>
+            <td colspan="3" style="text-align: center;">นับจากนั้น เขาก็จะไม่ถามเกี่ยวกับชีวิตส่วนตัวของเจ้าอีก</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/VCF1_240111_210016_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_240111_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/210016_80.wav"></audio></td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">ดูเหมือนว่าคุณสมบัติของผู้สมัครคนนี้จะไม่ธรรมดา</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/VCF1_240111_210016_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_240111_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/210016_67.wav"></audio></td>
+
+          <!-- Sample for 2.wav -->
+          <tr>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/VCF1_150046.wav"></audio></td>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/320146.wav"></audio></td>
+            <td colspan="3" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/VCF1_150046_320146_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_150046_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/320146_54.wav"></audio></td>
+          </tr>  
+          <tr>
+            <td colspan="3" style="text-align: center;">นับจากนั้น เขาก็จะไม่ถามเกี่ยวกับชีวิตส่วนตัวของเจ้าอีก</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/VCF1_150046_320146_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_150046_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/320146_80.wav"></audio></td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">ดูเหมือนว่าคุณสมบัติของผู้สมัครคนนี้จะไม่ธรรมดา</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/VCF1_150046_320146_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_150046_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/320146_67.wav"></audio></td>
 
 
-           <tr>
-        <td>She promised me we'd do this together</td>
-        <td><audio controls style="width: 200px;" src="raw/samples/comparsion/groundtruth_speech/Anna-00-1036.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video/Anna-00-1036.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/mmaudio+s2d/Anna-00-1036.mp4"></video></td>
-        <!-- <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td> -->
-        <td><video controls width="200" src="raw/samples/V2SA/disney/Anna-00-1036-dualdub.mp4"></video></td>
-      </tr> 
+
+          <!-- Sample for 3.wav -->
+          <tr>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/VCF1_010435.wav"></audio></td>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/310051.wav"></audio></td>
+            <td colspan="3" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/VCF1_010435_310051_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_010435_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/310051_54.wav"></audio></td>
+          </tr>  
+          <tr>
+            <td colspan="3" style="text-align: center;">นับจากนั้น เขาก็จะไม่ถามเกี่ยวกับชีวิตส่วนตัวของเจ้าอีก</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/VCF1_010435_310051_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_010435_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/310051_80.wav"></audio></td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">ดูเหมือนว่าคุณสมบัติของผู้สมัครคนนี้จะไม่ธรรมดา</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/VCF1_010435_310051_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_010435_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/310051_67.wav"></audio></td>
 
 
-      <tr>
-        <td>If you so much as touch us Hiccup is gonna kick</td>
-        <td><audio controls style="width: 200px;" src="raw/samples/comparsion/groundtruth_speech/AstridHofferson-00-0680.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video/AstridHofferson-00-0680.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/mmaudio+s2d/AstridHofferson-00-0680.mp4"></video></td>
-        <!-- <td><video controls width="200" src="raw/samples/comparsion/mmaudio+s2d/AstridHofferson-00-0680.mp4"></video></td> -->
-        <td><video controls width="200" src="raw/samples/V2SA/ragon/AstridHofferson-00-0680-dualdub.mp4"></video></td>
-      </tr> 
+     <!-- Sample for 4.wav -->
+          <tr>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/VCF1_210227.wav"></audio></td>
+            <td rowspan="6"><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/330033.wav"></audio></td>
+            <td colspan="3" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/VCF1_210227_330033_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_210227_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/330033_54.wav"></audio></td>
+          </tr>  
+          <tr>
+            <td colspan="3" style="text-align: center;">นับจากนั้น เขาก็จะไม่ถามเกี่ยวกับชีวิตส่วนตัวของเจ้าอีก</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/VCF1_210227_330033_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_210227_80.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/330033_80.wav"></audio></td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align: center;">ดูเหมือนว่าคุณสมบัติของผู้สมัครคนนี้จะไม่ธรรมดา</td>
+          </tr>
+          <tr>
+            <td><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/VCF1_210227_330033_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/typhoon/VCF1_210227_67.wav"></audio></td>
+            <td><audio controls src="raw/table1/delightfulTTS/330033_67.wav"></audio></td>      
+
+        </tbody>
+        
+      </table>
+      </div>
 
 
-      <tr>
-        <td>With your track record</td>
-        <td><audio controls style="width: 200px;" src="raw/samples/V2SA/bossboy/gt-cutfoff-BossBaby-00-0224-speech.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/V2SA/bossboy/gt-BossBaby-00-0224-cutoff.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/mmaudio+s2d/BossBaby-00-0224.mp4"></video></td>
-        <!-- <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>-->
-        <td><video controls width="200" src="raw/samples/V2SA/bossboy/dualdub-BossBaby-00-0224-cutoff.mp4"></video></td>
-      </tr> 
 
-
-      <tr>
-        <td>I never knew what I was capable of</td>
-        <td><audio controls style="width: 200px;" src="raw/samples/comparsion/groundtruth_speech/Elsa-00-0985.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video/Elsa-00-0985.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/mmaudio+s2d/Elsa-00-0985.mp4"></video></td>
-        <!-- <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>-->
-        <td><video controls width="200" src="raw/samples/V2SA/ice-queen/Elsa-00-0985-dualdub-0417-as.mp4"></video></td>
-      </tr> 
-    `;
+`;
       
     document.getElementById('v2st-body').innerHTML = sample_data
 
 
 
     sample_data =`
-      <tr>
-        <th>Ground Truth Video</th>
-        <th>MMAudio</th>
-        <th>DualDub</th>
-      </tr>
-
-
-      
-      <tr>
-        <!-- <td>-----</td> -->
-        <!-- <td>-----</td> -->
-        <td><video controls width="200" src="raw/samples/comparsion/video/Bob-00-1059.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video-mmaudio-largev3/Bob-00-1059.mp4"></video></td>
-        <!-- <td><video controls width="200" src="raw/samples/V2A/Bob-00-1059.mp4"></video></td>-->
-        <td><video controls width="200" src="raw/samples/V2A/raw/samples/V2A/Bob-00-1059-dualdub.mp4"></video></td>
-      </tr> 
-
-
-      <tr>
-        <td><video controls width="200" src="raw/samples/comparsion/video/Elsa-00-0985.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video-mmaudio-largev3/Elsa-00-0985.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/V2SA/ice-queen/Elsa-00-0985-dualdub-0417-a.mp4"></video></td>
-      </tr> 
-
-
-      <tr>
-        <td><video controls width="200" src="raw/samples/comparsion/video/Anna-00-1036.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video-mmaudio-largev3/Anna-00-1036.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/V2A/dualdubaudio-Anna-00-1036.mp4"></video></td>
-      </tr> 
-
-      <tr>
-        <td><video controls width="200" src="raw/samples/comparsion/video/AstridHofferson-00-0680.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video-mmaudio-largev3/AstridHofferson-00-0680.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/V2SA/ragon/AstridHofferson-00-0680-dualdub-v2a.mp4"></video></td>
-      </tr> 
+     
     `;
       
     document.getElementById('v2a-body').innerHTML = sample_data
@@ -213,38 +230,7 @@
 
 
     sample_data =`
-      <tr>
-        <th>Text</th>
-        <th>Reference Speaker</th>
-        <th>Ground Truth Video</th>
-        <th>Speaker2dubber</th>
-        <th>DualDub</th>
-      </tr>
-
-      <tr>
-        <td>Are you kidding I'm not missing one</td>
-        <td><audio controls style="width: 200px;" src="raw/samples/comparsion/groundtruth_speech/Bill-00-1575.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video/Bill-00-1575.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/mmaudio+s2d/Bill-00-1575.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/V2A/raw/samples/V2S/Bill-00-1575-dualdub.mp4"></video></td>
-      </tr> 
-
-
-        <tr>
-        <td>in the car right now on my way to the office to fax them to you</td>
-        <td><audio controls style="width: 200px;" src="raw/samples/V2S/gtspeech-AIMcW-00-0583.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video/AIMcW-00-0583.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video-s2dubber/AIMcW-00-0583.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/V2S/AIMcW-00-0583-dualdub.mp4"></video></td>
-      </tr> 
-
-      <tr>
-        <td>I never knew what I was capable of</td>
-        <td><audio controls style="width: 200px;" src="raw/samples/comparsion/groundtruth_speech/Elsa-00-0985.wav"></audio></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video/Elsa-00-0985.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/comparsion/video-s2dubber/Elsa-00-0985.mp4"></video></td>
-        <td><video controls width="200" src="raw/samples/V2SA/ice-queen/Elsa-00-0985-dualdub-0417-speech.mp4"></video></td>
-      </tr> 
+      
 
     `;
       
