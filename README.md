@@ -9,7 +9,6 @@ XEmoRAG is a novel framework for cross-lingual emotion transfer in speech synthe
 Key features:
 - Zero-shot emotion transfer without parallel emotional data
 - Controllable emotion intensity (weak/normal/strong)
-- Language-agnostic emotional embedding extraction
 - Natural prosody preservation through flow-matching
 
 ## Demo Contents
@@ -40,15 +39,3 @@ Compares the original X-Codec2 approach with our flow-matching module on:
 2. Click the play button on any audio sample to listen
 3. Compare the emotional quality between different systems
 4. Observe the intensity variations in the controllable examples
-
-## Citation
-
-If you find this work useful, please cite our paper:
-
-```bibtex
-@inproceedings{xemorag2024,
-  title={XEmoRAG: Cross-Lingual Emotion Transfer with Controllable Intensity Using Retrieval-Augmented Generation},
-  author={Author Names},
-  booktitle={Conference Name},
-  year={2024}
-}
