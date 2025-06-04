@@ -72,7 +72,7 @@
 
 
     <h2 style="text-align: center;">Flow Matching for Natural Prosody and Timbre<a name="Comparison"></a></h2>
-    <p style="text-align: justify;">Compare Flow matching and original xCodec2 in Llasa on naturalness, expressiveness, and timbre blending.</p>
+    <p style="text-align: justify;">Compare Flow matching and original X-Codec2 in Llasa on naturalness, expressiveness, and timbre blending.</p>
     <table style="display: flex; justify-content: center;">
       <tbody id="v2s-body">
       </tbody>
@@ -230,7 +230,68 @@
 
 
     sample_data =`
-      
+              <table border="1" cellspacing="0" cellpadding="6" style="width: 100%; min-width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th>Chinese ref audio</th>
+            <th>Matched Thai audio</th>
+            <th>X-Codec2</th>
+            <th>flow-matching</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Sample for 1.wav -->
+          <tr>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/VCF1_240111.wav"></audio></td>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/210016.wav"></audio></td>
+            <td colspan="2" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+          <tr>
+            <td><audio controls src="raw/table3/VCF1_240111_210016_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/proposed/VCF1_240111_fatigue/VCF1_240111_210016_54.wav"></audio></td>
+          </tr>  
+          
+          <!-- Sample for 2.wav -->
+          <tr>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/VCF1_150046.wav"></audio></td>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/320146.wav"></audio></td>
+            <td colspan="2" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+
+          <tr>
+            <td><audio controls src="raw/table3/VCF1_150046_320146_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/proposed/VCF1_150046_intense_angry/VCF1_150046_320146_54.wav"></audio></td>
+          </tr> 
+         
+          <!-- Sample for 3.wav -->
+          <tr>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/VCF1_010435.wav"></audio></td>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/310051.wav"></audio></td>
+            <td colspan="2" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+
+          <tr>
+            <td><audio controls src="raw/table3/VCF1_010435_310051_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/proposed/VCF1_010435_intense_happy/VCF1_010435_310051_54.wav"></audio></td>
+          </tr> 
+          
+         
+
+     <!-- Sample for 4.wav -->
+          <tr>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/VCF1_210227.wav"></audio></td>
+            <td rowspan="2"><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/330033.wav"></audio></td>
+            <td colspan="2" style="text-align: center;">ในฐานะที่เจ้าอยู่ในสำนักกระบี่วิญญาณมาตั้งหลายปี</td>
+          </tr>  
+          <tr>
+            <td><audio controls src="raw/table3/VCF1_210227_330033_54.wav"></audio></td>
+            <td><audio controls src="raw/table1/proposed/VCF1_210227_intense_sad/VCF1_210227_330033_54.wav"></audio></td>
+          </tr>  
+          
+        </tbody>
+        
+      </table>
 
     `;
       
