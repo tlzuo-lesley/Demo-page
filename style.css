@@ -14,3 +14,20 @@ body {
   table { font-size: 14px; }
   audio { max-width: 150px; }
 }
+
+.references {
+      width: 80%;              /* 控制宽度 */
+      margin: 0 auto;          /* 水平居中 */
+      padding: 20px;
+      /* background-color: #f9f9f9; */
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+    }
+    .reference-item {
+      margin-bottom: 15px;
+    }
+    .ref-num {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+ 

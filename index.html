@@ -52,7 +52,7 @@
 
 
     <h2 style="text-align: center;">Cross-Lingual Emotion Comparison<a name="Comparison"></a></h2>
-    <p style="text-align: justify;">Compare emotional speech synthesis results between XEmoRAG and baseline models in Chinese-to-Thai transfer.</p>
+    <p style="text-align: justify;">This comprehensive comparison highlights XEmoRAG's ability to transfer emotions cross-lingually, comparing it with two state-of-the-art baseline systems—Typhoon<span class="citation">[1]</span> and DelightfulTTS<span class="citation">[2]</span>—in the Chinese-to-Thai transfer task. For each test case, we present: (1) the original Chinese emotional reference audio, (2) the emotionally matched Thai utterance retrieved from our emotional database, and (3) synthesized outputs from all three systems for direct comparison. The evaluation spans four key emotions (anger, happiness, sadness, and fatigue), with emotion labels not seen across different textual contexts, thus showcasing XEmoRAG's consistent ability to preserve emotional authenticity while maintaining natural prosody in Thai.</p>
     <!-- <h2 style="text-align: center;">Comparison of Emotional behavior<a name="Comparison"></a></h2> -->
 
     <!-- <table style="display: flex; justify-content: center;"> -->
@@ -64,7 +64,7 @@
 
 
     <h2 style="text-align: center;">Emotion Intensity Control<a name="Comparison"></a></h2>
-    <p style="text-align: justify;">Demonstrate XEmoRAG's ability to control emotion intensity at three levels: weak, normal, and strong.</p>
+    <p style="text-align: justify;">Demonstrate XEmoRAG's ability to control emotion intensity at three levels: weak, normal, and strong. We present: (1) the Chinese reference audio establishing the base emotion, followed by (2) three synthesized Thai versions demonstrating precisely controlled intensity levels (weak/normal/strong). The samples use identical textual content to isolate intensity effects, with emotional strength adjusted through our retrieval-augmented generation framework. </p>
     <table style="display: flex; justify-content: center;">
       <tbody id="v2a-body">
       </tbody>
@@ -72,7 +72,7 @@
 
 
     <h2 style="text-align: center;">Flow Matching for Natural Prosody and Timbre<a name="Comparison"></a></h2>
-    <p style="text-align: justify;">Compare Flow matching and original X-Codec2 in Llasa on naturalness, expressiveness, and timbre blending.</p>
+    <p style="text-align: justify;"> This ablation study validates our flow-matching module's contribution by comparing: (1) the original X-Codec2 in Llasa<span class="citation">[3]</span> output with (2) our flow-matched version under identical input conditions. Each comparison pair includes: (a) the Chinese reference audio, (b) the retrieved Thai emotional prompt, and (c) both synthesis outputs. The results clearly demonstrate the flow-matching module's enhancements in naturalness, expressiveness, and  timbre blending.</p>
     <table style="display: flex; justify-content: center;">
       <tbody id="v2s-body">
       </tbody>
@@ -84,7 +84,7 @@
 <script type="" text/javascript>
   window.onload = function () {
     sample_data=`
-           <div style="width: 100%; overflow-x: auto; margin: 20px 0;padding: 0;">
+    <div style="width: 100%; overflow-x: auto; margin: 20px 0;padding: 0;">
         <table border="1" cellspacing="0" cellpadding="6" style="width: 100%; min-width: 100%; border-collapse: collapse;">
         <thead>
           <tr>
@@ -351,5 +351,40 @@
     document.getElementById('v2s-body').innerHTML = sample_data
 
   }
+
+
 </script>
+
+<section class="references">
+  
+  <div class="reference-item" id="ref1">
+    <span class="ref-num">[1]</span>
+    <span class="ref-content">
+      K. Pipatanakul et al., "Typhoon 2: A Family of Open Text and Multimodal Thai Large Language Models", 
+      <em>arXiv preprint arXiv:2412.13702</em>, 2024.
+    </span>
+  </div>
+
+
+  <div class="reference-item" id="ref4">
+    <span class="ref-num">[2]</span>
+    <span class="ref-content">
+      Y. Li et al., "Zero-shot emotion transfer for cross-lingual speech synthesis", 
+      <em>IEEE ASRU Workshop</em>, pp. 1-8, 2023.
+      <span class="doi-badge">DOI: 10.1109/ASRU57964.2023.10389625</span>
+    </span>
+  </div>
+
+  <div class="reference-item" id="ref3">
+    <span class="ref-num">[3]</span>
+    <span class="ref-content">
+      Z. Ye et al., "Llasa: Scaling Train-Time and Inference-Time Compute for Llama-based Speech Synthesis", 
+      <em>arXiv preprint arXiv:2502.04128</em>, 2025.
+    </span>
+  </div>
+
+</section>
+
+
+
 
