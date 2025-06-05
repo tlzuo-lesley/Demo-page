@@ -35,7 +35,7 @@
     <p style="text-align: justify;">
       Zero-shot emotion transfer in cross-lingual speech synthesis refers to generating speech in a target language, where the emotion is expressed based on reference speech from a different source language.
       However, this task remains challenging due to the scarcity of parallel multilingual emotional corpora, the presence of foreign accent artifacts, and the difficulty of separating emotion from language-specific prosodic features.
-      In this paper, we propose XEmoRAG, the first system specifically designed for transferring emotions from Chinese to Thai in a zero-shot setting without relying on parallel emotional data.
+      In this paper, we propose XEmoRAG, the first system to leverage an LLM-based model for zero-shot emotion transfer from Chinese to Thai, without relying on parallel emotional data.
       XEmoRAG extracts language-agnostic emotional embeddings from Chinese speech and retrieves emotionally matched Thai utterances from a curated emotional database, enabling controllable emotion transfer without explicit emotion labels. 
       Additionally, a flow-matching alignment module minimizes pitch and duration mismatches to ensure natural prosody and speaker timbre blending.
       Experimental results show that XEmoRAG synthesizes expressive and natural Thai speech using only Chinese reference audio, without requiring explicit emotion labels.
